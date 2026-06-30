@@ -1,4 +1,5 @@
 # Propuesta Saxy Jazz Club
 
 Landing de propuesta económica para Saxy Jazz Club (BubbleMesh Xperience).
-Chatbot en modo demostración: input bloqueado, 3 preguntas predefinidas.
+
+Demo del asistente: el chat tiene 3 preguntas predefinidas; el input libre está bloqueado y el asistente real se activa al contratar con BubbleMesh.
