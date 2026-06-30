@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #0A0A0A; }
+  ::selection { background: rgba(233,30,140,0.35); color: #fff; }
+  @keyframes saxyBlink { 0%,100%{opacity:.25} 50%{opacity:1} }
+  @keyframes saxyDot { 0%,80%,100%{transform:translateY(0);opacity:.3} 40%{transform:translateY(-4px);opacity:1} }
+  @keyframes saxyFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-5px)} }
+  @media print { [data-reveal]{opacity:1!important;transform:none!important} }
+</style>
+</helmet>
+
+<div style="background:#0A0A0A;color:#FFFFFF;font-family:'Inter',sans-serif;overflow-x:hidden;min-height:100vh">
+
+  <!-- ════════════════ HERO ════════════════ -->
+  <section data-screen-label="Hero" style="position:relative;width:100%;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding:clamp(110px,15vh,150px) 0 clamp(64px,9vh,100px)">
+    <div style="position:absolute;inset:0;background-image:url('assets/saxy-sign.png');background-size:cover;background-position:center;filter:blur(64px) brightness(0.4) saturate(0.85);transform:scale(1.35)"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(115deg,rgba(10,10,10,0.94) 0%,rgba(10,10,10,0.72) 48%,rgba(139,0,0,0.28) 100%)"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,0.55) 0%,rgba(10,10,10,0.2) 40%,rgba(10,10,10,0.96) 100%)"></div>
+    <div style="position:relative;max-width:1120px;margin:0 auto;padding:0 24px;width:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(36px,5vw,72px);align-items:center">
+      <!-- texto -->
+      <div>
+        <p style="font-family:'JetBrains Mono',monospace;font-size:clamp(10px,1.1vw,11px);letter-spacing:0.2em;text-transform:uppercase;color:#C2185B;margin:0 0 26px">Propuesta de implementación · Saxy Jazz Club</p>
+        <h1 style="font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(30px,3.8vw,54px);line-height:1.08;letter-spacing:0.02em;text-transform:uppercase;margin:0">
+          <span style="color:#FFFFFF">Mientras tu equipo tarda horas,</span><br>
+          <span style="background:linear-gradient(90deg,#FFFFFF 0%,#E91E8C 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">tu asistente responde en segundos.</span>
+        </h1>
+        <p style="font-family:'Inter',sans-serif;font-size:clamp(15px,1.6vw,19px);line-height:1.65;color:#E8E8E8;margin:30px 0 0;max-width:52ch;font-weight:400">Cada mensaje sin respuesta es una mesa vacía. Te mostramos cómo cambiar eso — sin reemplazar a tu equipo, sino dándole lo que le falta.</p>
+        <div style="margin-top:44px;display:flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#888">
+          <span style="width:1px;height:32px;background:linear-gradient(to bottom,#C2185B,transparent);display:inline-block"></span>
+          Desliza para conocer la propuesta
+        </div>
+      </div>
+      <!-- letrero -->
+      <div style="justify-self:center;width:100%;max-width:440px">
+        <div style="position:relative;aspect-ratio:1/1;border:1px solid rgba(194,24,91,0.3);border-radius:4px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,0.6),0 0 70px rgba(194,24,91,0.16)">
+          <img src="assets/saxy-sign.png" alt="Letrero SAXY Jazz Club" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(0.95) contrast(1.05)" />
+          <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,0) 55%,rgba(10,10,10,0.55) 100%);pointer-events:none"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ 01 · RESUMEN EJECUTIVO ════════════════ -->
+  <section data-screen-label="Resumen ejecutivo" style="background:#0A0A0A;padding:clamp(80px,11vw,130px) 0;position:relative">
+    <div style="max-width:960px;margin:0 auto;padding:0 24px;position:relative">
+      <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(90px,13vw,150px);font-weight:700;color:rgba(194,24,91,0.07);line-height:1;position:absolute;top:-58px;left:18px;pointer-events:none;user-select:none">01</span>
+      <div style="max-width:680px;margin:0 auto;text-align:center;position:relative" data-reveal>
+        <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#C2185B;margin:0 0 20px">Resumen ejecutivo</p>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(32px,5vw,54px);line-height:1.08;letter-spacing:0.02em;text-transform:uppercase;margin:0 0 28px">El proyecto en una página</h2>
+        <div style="width:60px;height:1px;background:#C2185B;margin:0 auto 36px"></div>
+        <p style="font-family:'Inter',sans-serif;font-size:clamp(15px,1.4vw,17px);line-height:1.8;color:#E8E8E8;margin:0 0 22px">Saxy Jazz Club tiene un equipo de marketing activo. Tienen presencia, tienen contenido, tienen 46K seguidores que interactúan. El problema no es la estrategia — es el tiempo de respuesta.</p>
+        <p style="font-family:'Inter',sans-serif;font-size:clamp(15px,1.4vw,17px);line-height:1.8;color:#888;margin:0">Cuando alguien pregunta por el cover del viernes a las 6pm y recibe respuesta el sábado por la mañana, esa mesa ya está ocupada por alguien más.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:64px" data-reveal>
+        <div style="background:#1A1A1A;border:1px solid rgba(255,255,255,0.06);border-top:2px solid #C2185B;border-radius:4px;padding:32px 26px">
+          <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#888;margin:0 0 14px">Responde</p>
+          <p style="font-family:'Inter',sans-serif;font-size:15px;line-height:1.65;color:#E8E8E8;margin:0">Al instante las preguntas frecuentes, 24/7, sin que un humano levante un dedo.</p>
+        </div>
+        <div style="background:#1A1A1A;border:1px solid rgba(255,255,255,0.06);border-top:2px solid #C2185B;border-radius:4px;padding:32px 26px">
+          <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#888;margin:0 0 14px">Filtra</p>
+          <p style="font-family:'Inter',sans-serif;font-size:15px;line-height:1.65;color:#E8E8E8;margin:0">Separa el ruido de lo que importa y escala solo lo que sí necesita atención humana.</p>
+        </div>
+        <div style="background:#1A1A1A;border:1px solid rgba(255,255,255,0.06);border-top:2px solid #C2185B;border-radius:4px;padding:32px 26px">
+          <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#888;margin:0 0 14px">Entrega</p>
+          <p style="font-family:'Inter',sans-serif;font-size:15px;line-height:1.65;color:#E8E8E8;margin:0">El mensaje al equipo con el contexto ya capturado: fecha, personas, intención.</p>
+        </div>
+      </div>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.6vw,28px);font-weight:600;line-height:1.4;color:#FFFFFF;text-align:center;max-width:620px;margin:56px auto 0" data-reveal>El equipo de marketing sigue siendo el equipo de marketing. Solo deja de perder tiempo respondiendo <span style="color:#E91E8C;font-style:italic">“¿a qué hora abren?”</span> por décima vez en el día.</p>
+    </div>
+  </section>
+
+  <!-- ════════════════ 02 · EL PROBLEMA ════════════════ -->
+  <section data-screen-label="El problema" style="background:#111111;padding:clamp(80px,11vw,130px) 0;position:relative">
+    <div style="max-width:960px;margin:0 auto;padding:0 24px;position:relative">
+      <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(90px,13vw,150px);font-weight:700;color:rgba(194,24,91,0.07);line-height:1;position:absolute;top:-58px;left:18px;pointer-events:none;user-select:none">02</span>
+      <div style="position:relative;margin-bottom:56px" data-reveal>
+        <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#C2185B;margin:0 0 18px">El costo del tiempo de respuesta</p>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(32px,5vw,54px);line-height:1.08;letter-spacing:0.02em;text-transform:uppercase;margin:0;max-width:18ch">Lo que está pasando hoy</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
+        <div style="border-top:1px solid rgba(194,24,91,0.3);padding-top:28px" data-reveal>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;line-height:1.25;color:#FFFFFF;margin:0 0 14px">“¿Cuánto cuesta el cover del viernes?”</p>
+          <p style="font-family:'Inter',sans-serif;font-size:15px;line-height:1.7;color:#888;margin:0">Esa pregunta llega 40 veces a la semana. Cada una necesita respuesta. Ninguna necesita que un humano la responda.</p>
+        </div>
+        <div style="border-top:1px solid rgba(194,24,91,0.3);padding-top:28px" data-reveal>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;line-height:1.25;color:#FFFFFF;margin:0 0 14px">El inbox no distingue urgencias</p>
+          <p style="font-family:'Inter',sans-serif;font-size:15px;line-height:1.7;color:#888;margin:0">Quien quiere reservar para 10 personas el sábado llega al mismo inbox que quien pregunta el horario. Se atienden por orden de llegada — no de importancia.</p>
+        </div>
+        <div style="border-top:1px solid rgba(194,24,91,0.3);padding-top:28px" data-reveal>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;line-height:1.25;color:#FFFFFF;margin:0 0 14px">Los picos son impredecibles</p>
+          <p style="font-family:'Inter',sans-serif;font-size:15px;line-height:1.7;color:#888;margin:0">Cuando anuncias un artista especial, los mensajes se multiplican. En ese momento — el de mayor oportunidad — es cuando más se resiente la capacidad de respuesta.</p>
+        </div>
+        <div style="border-top:1px solid rgba(194,24,91,0.3);padding-top:28px" data-reveal>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;line-height:1.25;color:#FFFFFF;margin:0 0 14px">Cada minuto de espera tiene un costo</p>
+          <p style="font-family:'Inter',sans-serif;font-size:15px;line-height:1.7;color:#888;margin:0">El cliente que no recibe respuesta en los primeros minutos no espera. Busca otra opción. Esa venta nunca supiste que la perdiste.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ 03 · OBJETIVO ════════════════ -->
+  <section data-screen-label="Objetivo" style="background:#0A0A0A;padding:clamp(80px,11vw,130px) 0;position:relative">
+    <div style="max-width:960px;margin:0 auto;padding:0 24px;position:relative">
+      <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(90px,13vw,150px);font-weight:700;color:rgba(194,24,91,0.07);line-height:1;position:absolute;top:-58px;left:18px;pointer-events:none;user-select:none">03</span>
+      <div style="position:relative;max-width:720px" data-reveal>
+        <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#C2185B;margin:0 0 18px">Objetivo del proyecto</p>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(32px,5vw,54px);line-height:1.08;letter-spacing:0.02em;text-transform:uppercase;margin:0 0 28px">Para qué está diseñado esto</h2>
+        <p style="font-family:'Inter',sans-serif;font-size:clamp(16px,1.6vw,19px);line-height:1.7;color:#E8E8E8;margin:0">Reducir el tiempo de respuesta en Instagram DM y WhatsApp a <span style="color:#E91E8C">segundos</span> — para las preguntas que no necesitan a un humano — y entregarle al equipo de marketing solo los mensajes que sí requieren su atención, con el contexto ya capturado.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1px;background:rgba(255,255,255,0.06);margin-top:56px;border:1px solid rgba(255,255,255,0.06)" data-reveal>
+        <div style="background:#0A0A0A;padding:34px 30px">
+          <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#FFFFFF;margin:0 0 10px">→ Respuesta inmediata</p>
+          <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#888;margin:0">Para preguntas frecuentes, las 24 horas, los 7 días.</p>
+        </div>
+        <div style="background:#0A0A0A;padding:34px 30px">
+          <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#FFFFFF;margin:0 0 10px">→ Filtro inteligente</p>
+          <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#888;margin:0">Que separa el ruido de lo que realmente importa.</p>
+        </div>
+        <div style="background:#0A0A0A;padding:34px 30px">
+          <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#FFFFFF;margin:0 0 10px">→ Contexto capturado</p>
+          <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#888;margin:0">Fecha, número de personas, tipo de evento — para que el CM no empiece de cero.</p>
+        </div>
+        <div style="background:#0A0A0A;padding:34px 30px">
+          <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#FFFFFF;margin:0 0 10px">→ Equipo enfocado</p>
+          <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#888;margin:0">En cerrar reservas y gestionar relaciones, no en responder el horario.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ 04 · ALCANCE ════════════════ -->
+  <section data-screen-label="Alcance" style="background:#111111;padding:clamp(80px,11vw,130px) 0;position:relative">
+    <div style="max-width:960px;margin:0 auto;padding:0 24px;position:relative">
+      <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(90px,13vw,150px);font-weight:700;color:rgba(194,24,91,0.07);line-height:1;position:absolute;top:-58px;left:18px;pointer-events:none;user-select:none">04</span>
+      <div style="position:relative;margin-bottom:56px" data-reveal>
+        <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#C2185B;margin:0 0 18px">La implementación paso a paso</p>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(32px,5vw,54px);line-height:1.08;letter-spacing:0.02em;text-transform:uppercase;margin:0">Qué construimos</h2>
+      </div>
+
+      <!-- Plataforma -->
+      <div style="background:#1A1A1A;border:1px solid rgba(255,255,255,0.06);border-radius:4px;padding:40px 36px;margin-bottom:48px" data-reveal>
+        <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#E91E8C;margin:0 0 12px">La plataforma</p>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.4vw,36px);font-weight:700;text-transform:uppercase;letter-spacing:0.02em;color:#FFFFFF;margin:0 0 18px">El chatbot de atención</h3>
+        <p style="font-family:'Inter',sans-serif;font-size:15px;line-height:1.7;color:#E8E8E8;margin:0 0 26px;max-width:64ch">El chatbot se conecta directamente a Instagram y WhatsApp Business de Saxy. Desde ahí orquesta todas las conversaciones automáticas y las que necesitan escalar al equipo.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px 32px">
+          <div style="display:flex;gap:12px;align-items:flex-start"><span style="color:#C2185B;font-size:13px;line-height:1.7">—</span><span style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.6;color:#888">Responde a palabras clave en DMs de Instagram y WhatsApp</span></div>
+          <div style="display:flex;gap:12px;align-items:flex-start"><span style="color:#C2185B;font-size:13px;line-height:1.7">—</span><span style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.6;color:#888">Clasifica conversaciones por tipo e intención</span></div>
+          <div style="display:flex;gap:12px;align-items:flex-start"><span style="color:#C2185B;font-size:13px;line-height:1.7">—</span><span style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.6;color:#888">Notifica al equipo con el contexto capturado al escalar</span></div>
+          <div style="display:flex;gap:12px;align-items:flex-start"><span style="color:#C2185B;font-size:13px;line-height:1.7">—</span><span style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.6;color:#888">Dirige al usuario al widget de Riservi en el momento exacto</span></div>
+        </div>
+      </div>
+
+      <!-- Flujos timeline -->
+      <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#888;margin:0 0 28px" data-reveal>Los flujos que construimos</p>
+      <div style="display:flex;flex-direction:column;gap:0">
+        <div style="display:grid;grid-template-columns:48px 1fr;gap:22px;position:relative;padding-bottom:36px" data-reveal>
+          <div style="position:absolute;left:23px;top:38px;bottom:0;width:1px;background:linear-gradient(to bottom,#C2185B,rgba(194,24,91,0.25))"></div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;color:#C2185B;line-height:1">01</div>
+          <div>
+            <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#FFFFFF;margin:0 0 8px">Bienvenida y FAQ</p>
+            <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#888;margin:0 0 12px">Activado cuando alguien escribe por primera vez o usa palabras clave. Responde al instante: horario (Mar–Sáb desde 8pm), cover (Jue $200 · Vie y Sáb $300), ubicación (Plaza O2, Sótano 1, San Pedro) y el link directo a Riservi.</p>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:48px 1fr;gap:22px;position:relative;padding-bottom:36px" data-reveal>
+          <div style="position:absolute;left:23px;top:38px;bottom:0;width:1px;background:linear-gradient(to bottom,#C2185B,rgba(194,24,91,0.25))"></div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;color:#C2185B;line-height:1">02</div>
+          <div>
+            <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#FFFFFF;margin:0 0 8px">Intención de reserva</p>
+            <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#888;margin:0">Pregunta fecha, número de personas y horario preferido; envía el link de Riservi contextualizado; y si la persona no completa la reserva, hace seguimiento automático a las 24 horas.</p>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:48px 1fr;gap:22px;position:relative;padding-bottom:36px" data-reveal>
+          <div style="position:absolute;left:23px;top:38px;bottom:0;width:1px;background:linear-gradient(to bottom,#C2185B,rgba(194,24,91,0.25))"></div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;color:#C2185B;line-height:1">03</div>
+          <div>
+            <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#FFFFFF;margin:0 0 8px">Eventos y cartelera</p>
+            <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#888;margin:0">Activado desde posts de artistas o anuncios especiales: info del artista de la semana, precio de boletos, instrucciones de compra y redirección a Riservi o escalada para grupos grandes.</p>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:48px 1fr;gap:22px;position:relative;padding-bottom:8px" data-reveal>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;color:#C2185B;line-height:1">04</div>
+          <div>
+            <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#FFFFFF;margin:0 0 8px">Escalada al equipo de marketing</p>
+            <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#888;margin:0">Detecta preguntas fuera de su alcance, notifica al equipo con el historial completo, el cliente recibe <span style="color:#E8E8E8;font-style:italic">“un miembro de nuestro equipo te responde en breve”</span>, y el CM retoma con fecha, personas e intención ya capturadas.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Riservi tabla -->
+      <div style="margin-top:56px" data-reveal>
+        <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#888;margin:0 0 22px">La integración con Riservi</p>
+        <table style="width:100%;border-collapse:collapse">
+          <thead>
+            <tr>
+              <th style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#E91E8C;padding:12px 16px;text-align:left;border-bottom:1px solid rgba(194,24,91,0.3);width:50%">Riservi hace</th>
+              <th style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#E91E8C;padding:12px 16px;text-align:left;border-bottom:1px solid rgba(194,24,91,0.3);width:50%">El asistente hace</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="font-family:'Inter',sans-serif;font-size:15px;color:#E8E8E8;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.06)">Gestionar disponibilidad de mesas</td><td style="font-family:'Inter',sans-serif;font-size:15px;color:#888;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.06)">Responder preguntas antes de la reserva</td></tr>
+            <tr><td style="font-family:'Inter',sans-serif;font-size:15px;color:#E8E8E8;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.06)">Confirmar y recordar reservas</td><td style="font-family:'Inter',sans-serif;font-size:15px;color:#888;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.06)">Guiar al usuario hasta el widget</td></tr>
+            <tr><td style="font-family:'Inter',sans-serif;font-size:15px;color:#E8E8E8;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.06)">Administrar eventos y covers</td><td style="font-family:'Inter',sans-serif;font-size:15px;color:#888;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.06)">Informar sobre precios y cartelera</td></tr>
+            <tr><td style="font-family:'Inter',sans-serif;font-size:15px;color:#E8E8E8;padding:14px 16px">Base de datos de comensales</td><td style="font-family:'Inter',sans-serif;font-size:15px;color:#888;padding:14px 16px">Primer filtro de conversación</td></tr>
+          </tbody>
+        </table>
+        <div style="display:flex;gap:12px;align-items:flex-start;margin-top:24px;padding:18px 20px;background:rgba(194,24,91,0.06);border-left:2px solid #C2185B;border-radius:0 4px 4px 0">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#E91E8C;white-space:nowrap;padding-top:2px">Importante</span>
+          <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#E8E8E8;margin:0">El asistente no accede a la disponibilidad en tiempo real de Riservi. Lleva al cliente hasta el widget para que lo compruebe directamente. La conexión en tiempo real es posible como evolución futura del sistema.</p>
+        </div>
+      </div>
+
+      <!-- Fuera de alcance -->
+      <div style="margin-top:48px" data-reveal>
+        <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#666;margin:0 0 18px">Lo que no está en el alcance (por ahora)</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:10px 28px">
+          <p style="font-family:'Inter',sans-serif;font-size:14px;color:#666;margin:0;line-height:1.6">Conexión en tiempo real con disponibilidad de Riservi → Fase 2</p>
+          <p style="font-family:'Inter',sans-serif;font-size:14px;color:#666;margin:0;line-height:1.6">Gestión de comunidad o respuesta a comentarios → ver paquete con CM</p>
+          <p style="font-family:'Inter',sans-serif;font-size:14px;color:#666;margin:0;line-height:1.6">Creación de contenido para redes sociales → fuera de alcance</p>
+          <p style="font-family:'Inter',sans-serif;font-size:14px;color:#666;margin:0;line-height:1.6">Cobro o venta de boletos dentro del chat → requiere integración adicional</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ 05 · EQUIPO ════════════════ -->
+  <section data-screen-label="Equipo" style="background:#0A0A0A;padding:clamp(80px,11vw,130px) 0;position:relative">
+    <div style="max-width:960px;margin:0 auto;padding:0 24px;position:relative">
+      <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(90px,13vw,150px);font-weight:700;color:rgba(194,24,91,0.07);line-height:1;position:absolute;top:-58px;left:18px;pointer-events:none;user-select:none">05</span>
+      <div style="position:relative;margin-bottom:44px;max-width:680px" data-reveal>
+        <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#C2185B;margin:0 0 18px">BubbleMesh Xperience</p>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(32px,5vw,54px);line-height:1.08;letter-spacing:0.02em;text-transform:uppercase;margin:0 0 24px">Quién está detrás</h2>
+        <p style="font-family:'Inter',sans-serif;font-size:15px;line-height:1.75;color:#888;margin:0">No instalamos la herramienta y te dejamos con el manual. Construimos el flujo, lo entrenamos con la voz y la información de Saxy, lo probamos contigo antes de lanzarlo, y acompañamos el primer mes de operación.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.06)" data-reveal>
+        <div style="background:#0A0A0A;padding:32px 30px">
+          <img src="assets/avatar-elias-rico.png" alt="Elías Rico" style="width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center top;border:1px solid rgba(194,24,91,0.35);margin:0 0 18px;display:block" />
+          <p style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:#FFFFFF;margin:0 0 4px">Elías Rico</p>
+          <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#E91E8C;margin:0 0 14px">Líder de Ventas y Operaciones</p>
+          <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.6;color:#888;margin:0">Diseña la estrategia de implementación y la relación con el cliente.</p>
+        </div>
+        <div style="background:#0A0A0A;padding:32px 30px">
+          <img src="assets/avatar-emily-sisalima.png" alt="Emily Sisalima" style="width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center top;border:1px solid rgba(194,24,91,0.35);margin:0 0 18px;display:block" />
+          <p style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:#FFFFFF;margin:0 0 4px">Emily Sisalima</p>
+          <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#E91E8C;margin:0 0 14px">SR &amp; Account Manager</p>
+          <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.6;color:#888;margin:0">Tu punto de contacto principal durante todo el proyecto.</p>
+        </div>
+        <div style="background:#0A0A0A;padding:32px 30px">
+          <img src="assets/avatar-aranza-contreras.png" alt="Aranza Contreras" style="width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center top;border:1px solid rgba(194,24,91,0.35);margin:0 0 18px;display:block" />
+          <p style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:#FFFFFF;margin:0 0 4px">Aranza Contreras</p>
+          <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#E91E8C;margin:0 0 14px">Content &amp; Community</p>
+          <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.6;color:#888;margin:0">Garantiza que cada respuesta del asistente suene a Saxy, no a automatización genérica.</p>
+        </div>
+        <div style="background:#0A0A0A;padding:32px 30px">
+          <img src="assets/avatar-jesus-mostalac.png" alt="Jesús Mostalac" style="width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center top;border:1px solid rgba(194,24,91,0.35);margin:0 0 18px;display:block" />
+          <p style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:#FFFFFF;margin:0 0 4px">Jesús Mostalac</p>
+          <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#E91E8C;margin:0 0 14px">Marketing y Relaciones Públicas</p>
+          <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.6;color:#888;margin:0">Asegura que el asistente se integre de forma natural a la experiencia de marca.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ 06 · PRESUPUESTO ════════════════ -->
+  <section data-screen-label="Presupuesto" style="background:#111111;padding:clamp(80px,11vw,130px) 0;position:relative">
+    <div style="max-width:960px;margin:0 auto;padding:0 24px;position:relative">
+      <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(90px,13vw,150px);font-weight:700;color:rgba(194,24,91,0.07);line-height:1;position:absolute;top:-58px;left:18px;pointer-events:none;user-select:none">06</span>
+      <div style="position:relative;margin-bottom:52px" data-reveal>
+        <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#C2185B;margin:0 0 18px">Tres puntos de entrada · Mismo alcance, distinto compromiso</p>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(32px,5vw,54px);line-height:1.08;letter-spacing:0.02em;text-transform:uppercase;margin:0">La inversión</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;align-items:stretch" data-reveal>
+        <!-- Opción 1 -->
+        <div style="background:#1A1A1A;border:1px solid rgba(255,255,255,0.06);border-top:2px solid #C2185B;border-radius:4px;padding:36px 28px">
+          <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#888;margin:0 0 8px">Opción 1</p>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:#FFFFFF;margin:0 0 6px">Sin contrato</h3>
+          <p style="font-family:'Inter',sans-serif;font-size:13px;line-height:1.5;color:#888;margin:0 0 24px">Para quien quiere evaluar antes de comprometerse.</p>
+          <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:18px;margin-bottom:22px">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px"><span style="font-family:'Inter',sans-serif;font-size:13px;color:#888">Implementación</span><span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#FFFFFF">$15,000</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-family:'Inter',sans-serif;font-size:13px;color:#888">Mensual</span><span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#FFFFFF">$3,000</span></div>
+            <p style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin:6px 0 0;text-align:right">MXN</p>
+          </div>
+          <p style="font-family:'Inter',sans-serif;font-size:13px;line-height:1.6;color:#888;margin:0 0 18px">Sin plazo forzoso. Tú decides hasta cuándo continuar.</p>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <span style="font-family:'Inter',sans-serif;font-size:13px;color:#E8E8E8;line-height:1.5">— Config. completa del chatbot (IG + WhatsApp)</span>
+            <span style="font-family:'Inter',sans-serif;font-size:13px;color:#E8E8E8;line-height:1.5">— Diseño y programación de los 4 flujos</span>
+            <span style="font-family:'Inter',sans-serif;font-size:13px;color:#E8E8E8;line-height:1.5">— Entrenamiento con info real de Saxy</span>
+            <span style="font-family:'Inter',sans-serif;font-size:13px;color:#E8E8E8;line-height:1.5">— Pruebas y ajustes antes del lanzamiento</span>
+            <span style="font-family:'Inter',sans-serif;font-size:13px;color:#E8E8E8;line-height:1.5">— 1 mes de soporte post-lanzamiento</span>
+          </div>
+        </div>
+        <!-- Opción 2 featured -->
+        <div style="background:#1A1A1A;border:1px solid rgba(233,30,140,0.4);border-top:2px solid #E91E8C;border-radius:4px;padding:36px 28px;box-shadow:0 0 60px rgba(233,30,140,0.18);position:relative">
+          <div style="position:absolute;top:-11px;left:28px;display:inline-block;padding:4px 12px;background:#C2185B;border-radius:2px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:#fff">★ Recomendada</div>
+          <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#888;margin:0 0 8px">Opción 2 · 6 meses</p>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:#FFFFFF;margin:0 0 6px">Contrato 6 meses</h3>
+          <p style="font-family:'Inter',sans-serif;font-size:13px;line-height:1.5;color:#888;margin:0 0 24px">Para quien quiere arrancar sin pagar configuración.</p>
+          <div style="border-top:1px solid rgba(233,30,140,0.25);padding-top:18px;margin-bottom:22px">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px"><span style="font-family:'Inter',sans-serif;font-size:13px;color:#888">Implementación</span><span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#E91E8C">$0</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-family:'Inter',sans-serif;font-size:13px;color:#888">Mensual</span><span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#FFFFFF">$3,000</span></div>
+            <p style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin:6px 0 0;text-align:right">MXN</p>
+          </div>
+          <p style="font-family:'Inter',sans-serif;font-size:13px;line-height:1.6;color:#888;margin:0 0 18px">Config. absorbida en el contrato. Compromiso mínimo de 6 meses.</p>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <span style="font-family:'Inter',sans-serif;font-size:13px;color:#E8E8E8;line-height:1.5">— Todo lo de la Opción 1</span>
+            <span style="font-family:'Inter',sans-serif;font-size:13px;color:#E8E8E8;line-height:1.5">— Actualización mensual de flujos</span>
+            <span style="font-family:'Inter',sans-serif;font-size:13px;color:#E8E8E8;line-height:1.5">— Reporte mensual: atendidos, escalada, conversiones</span>
+            <span style="font-family:'Inter',sans-serif;font-size:13px;color:#E8E8E8;line-height:1.5">— Ajustes de flujo sin costo durante el contrato</span>
+          </div>
+        </div>
+        <!-- Opción 3 -->
+        <div style="background:#1A1A1A;border:1px solid rgba(255,255,255,0.06);border-top:2px solid #C2185B;border-radius:4px;padding:36px 28px">
+          <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#888;margin:0 0 8px">Opción 3 · 12 meses</p>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:#FFFFFF;margin:0 0 6px">Contrato 12 meses</h3>
+          <p style="font-family:'Inter',sans-serif;font-size:13px;line-height:1.5;color:#888;margin:0 0 24px">Para quien busca el mejor precio mensual y piensa escalar.</p>
+          <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:18px;margin-bottom:22px">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px"><span style="font-family:'Inter',sans-serif;font-size:13px;color:#888">Implementación</span><span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#E91E8C">$0</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-family:'Inter',sans-serif;font-size:13px;color:#888">Mensual</span><span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#FFFFFF">$2,500</span></div>
+            <p style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin:6px 0 0;text-align:right">MXN</p>
+          </div>
+          <p style="font-family:'Inter',sans-serif;font-size:13px;line-height:1.6;color:#888;margin:0 0 18px">Tarifa preferencial por compromiso anual.</p>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <span style="font-family:'Inter',sans-serif;font-size:13px;color:#E8E8E8;line-height:1.5">— Todo lo de la Opción 2</span>
+            <span style="font-family:'Inter',sans-serif;font-size:13px;color:#E8E8E8;line-height:1.5">— Evaluación semestral con recomendaciones</span>
+            <span style="font-family:'Inter',sans-serif;font-size:13px;color:#E8E8E8;line-height:1.5">— Prioridad en el desarrollo de Fase 2</span>
+            <span style="font-family:'Inter',sans-serif;font-size:13px;color:#E8E8E8;line-height:1.5">— Descuento si se amplía el alcance</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CM upsell -->
+      <div style="margin-top:36px;background:#0A0A0A;border:1px solid rgba(255,255,255,0.06);border-radius:4px;padding:32px 30px;display:flex;gap:28px;align-items:center;flex-wrap:wrap" data-reveal>
+        <div style="flex:1;min-width:280px">
+          <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#E91E8C;margin:0 0 10px">¿Quieren también el Community Manager?</p>
+          <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.7;color:#888;margin:0">Un CM dedicado que opere el asistente, gestione las conversaciones escaladas y maneje la comunidad. Es una inversión mayor — pero convierte el sistema en un equipo de atención completo, no solo una herramienta.</p>
+        </div>
+        <span style="font-family:'Inter',sans-serif;font-size:13px;font-weight:600;color:#E8E8E8;white-space:nowrap">Lo cotizamos en la misma reunión →</span>
+      </div>
+      <p style="font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1.7;color:#666;margin:28px 0 0;text-align:center" data-reveal>Nota: la licencia de la plataforma del chatbot corre por cuenta de Saxy. Plan recomendado ~$15 USD/mes. Te ayudamos a configurarlo.</p>
+    </div>
+  </section>
+
+  <!-- ════════════════ 07 · NEXT STEPS ════════════════ -->
+  <section data-screen-label="Next steps" style="background:#0A0A0A;padding:clamp(80px,11vw,130px) 0;position:relative">
+    <div style="max-width:960px;margin:0 auto;padding:0 24px;position:relative">
+      <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(90px,13vw,150px);font-weight:700;color:rgba(194,24,91,0.07);line-height:1;position:absolute;top:-58px;left:18px;pointer-events:none;user-select:none">07</span>
+      <div style="position:relative;margin-bottom:52px" data-reveal>
+        <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#C2185B;margin:0 0 18px">De aquí al lanzamiento</p>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(32px,5vw,54px);line-height:1.08;letter-spacing:0.02em;text-transform:uppercase;margin:0">Next steps</h2>
+      </div>
+      <div style="max-width:720px">
+        <div style="display:grid;grid-template-columns:48px 1fr auto;gap:22px;position:relative;padding-bottom:34px" data-reveal>
+          <div style="position:absolute;left:23px;top:38px;bottom:0;width:1px;background:linear-gradient(to bottom,#C2185B,rgba(194,24,91,0.2))"></div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;color:#C2185B;line-height:1">01</div>
+          <div><p style="font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:#FFFFFF;margin:0 0 6px">Confirmación y firma</p><p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.6;color:#888;margin:0">Seleccionan la opción. Firmamos el acuerdo y se realiza el primer pago.</p></div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#666;white-space:nowrap">1–2 días</div>
+        </div>
+        <div style="display:grid;grid-template-columns:48px 1fr auto;gap:22px;position:relative;padding-bottom:34px" data-reveal>
+          <div style="position:absolute;left:23px;top:38px;bottom:0;width:1px;background:linear-gradient(to bottom,#C2185B,rgba(194,24,91,0.2))"></div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;color:#C2185B;line-height:1">02</div>
+          <div><p style="font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:#FFFFFF;margin:0 0 6px">Sesión de onboarding</p><p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.6;color:#888;margin:0">60–90 min donde mapeamos horarios, precios, políticas, FAQ reales, tono y casos especiales. La base del entrenamiento.</p></div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#666;white-space:nowrap">Semana 1</div>
+        </div>
+        <div style="display:grid;grid-template-columns:48px 1fr auto;gap:22px;position:relative;padding-bottom:34px" data-reveal>
+          <div style="position:absolute;left:23px;top:38px;bottom:0;width:1px;background:linear-gradient(to bottom,#C2185B,rgba(194,24,91,0.2))"></div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;color:#C2185B;line-height:1">03</div>
+          <div><p style="font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:#FFFFFF;margin:0 0 6px">Construcción</p><p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.6;color:#888;margin:0">Construimos los flujos y entrenamos el asistente con la información de Saxy.</p></div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#666;white-space:nowrap">Semana 1–2</div>
+        </div>
+        <div style="display:grid;grid-template-columns:48px 1fr auto;gap:22px;position:relative;padding-bottom:34px" data-reveal>
+          <div style="position:absolute;left:23px;top:38px;bottom:0;width:1px;background:linear-gradient(to bottom,#C2185B,rgba(194,24,91,0.2))"></div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;color:#C2185B;line-height:1">04</div>
+          <div><p style="font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:#FFFFFF;margin:0 0 6px">Revisión con el equipo</p><p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.6;color:#888;margin:0">Muestran cómo funciona. Hacen las preguntas que harían sus clientes. Ajustamos lo que no suene bien.</p></div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#666;white-space:nowrap">Semana 2</div>
+        </div>
+        <div style="display:grid;grid-template-columns:48px 1fr auto;gap:22px;position:relative;padding-bottom:34px" data-reveal>
+          <div style="position:absolute;left:23px;top:38px;bottom:0;width:1px;background:linear-gradient(to bottom,#C2185B,rgba(194,24,91,0.2))"></div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;color:#C2185B;line-height:1">05</div>
+          <div><p style="font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:#FFFFFF;margin:0 0 6px">Lanzamiento</p><p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.6;color:#888;margin:0">El asistente entra en vivo. El equipo recibe un documento de referencia: qué maneja el asistente y qué atiende un humano.</p></div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#666;white-space:nowrap">Semana 2–3</div>
+        </div>
+        <div style="display:grid;grid-template-columns:48px 1fr auto;gap:22px;position:relative" data-reveal>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;color:#C2185B;line-height:1">06</div>
+          <div><p style="font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:#FFFFFF;margin:0 0 6px">Primer mes de ajustes</p><p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.6;color:#888;margin:0">Documentamos los casos que no anticipamos y optimizamos los flujos con conversaciones reales.</p></div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#666;white-space:nowrap">Mes 1</div>
+        </div>
+      </div>
+
+      <div style="margin-top:64px;text-align:center;padding:56px 24px;background:linear-gradient(135deg,rgba(194,24,91,0.12) 0%,rgba(10,10,10,0) 70%);border:1px solid rgba(194,24,91,0.2);border-radius:4px" data-reveal>
+        <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#E91E8C;margin:0 0 18px">Del primer pago al asistente en vivo: 2 a 3 semanas</p>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,44px);font-weight:700;text-transform:uppercase;letter-spacing:0.02em;color:#FFFFFF;margin:0 0 28px;line-height:1.1">¿Alguna pregunta<br>antes de arrancar?</h3>
+        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#E8E8E8;margin:0 0 32px">Escríbenos y lo resolvemos hoy.</p>
+        <button onClick="{{ openChat }}" style="display:inline-flex;align-items:center;gap:10px;padding:15px 34px;background:#C2185B;color:#fff;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer" style-hover="background:#E91E8C;box-shadow:0 0 24px rgba(233,30,140,0.4)">Pregúntale al asistente →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ FOOTER ════════════════ -->
+  <footer style="background:#0A0A0A;border-top:1px solid rgba(255,255,255,0.06);padding:48px 24px 56px">
+    <div style="max-width:960px;margin:0 auto;text-align:center">
+      <p style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:0.04em;color:#888;margin:0 0 10px">BubbleMesh Xperience</p>
+      <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#555;margin:0 0 6px">Propuesta preparada para Saxy Jazz Club · contacto@bubble-mesh.com</p>
+      <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:#444;margin:0">© 2026 BubbleMesh · LHIIS · Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <!-- ════════════════ CHATBOT ════════════════ -->
+  <sc-if value="{{ chatClosed }}" hint-placeholder-val="{{ true }}">
+    <button onClick="{{ openChat }}" style="position:fixed;bottom:28px;right:28px;z-index:1000;display:flex;align-items:center;gap:10px;padding:14px 22px 14px 18px;background:#C2185B;color:#fff;border:none;border-radius:40px;cursor:pointer;box-shadow:0 8px 32px rgba(194,24,91,0.45);font-family:'Inter',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.02em;animation:saxyFloat 4s ease-in-out infinite" style-hover="background:#E91E8C">
+      <span style="display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;background:rgba(255,255,255,0.18);border-radius:50%;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700">S</span>
+      Pregúntale a Saxy
+    </button>
+  </sc-if>
+
+  <sc-if value="{{ chatOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;bottom:28px;right:28px;z-index:1000;width:min(400px,calc(100vw - 32px));height:min(580px,calc(100vh - 56px));background:#111111;border:1px solid rgba(194,24,91,0.3);border-radius:8px;box-shadow:0 24px 70px rgba(0,0,0,0.7),0 0 60px rgba(194,24,91,0.12);display:flex;flex-direction:column;overflow:hidden">
+      <!-- header -->
+      <div style="display:flex;align-items:center;gap:12px;padding:18px 20px;border-bottom:1px solid rgba(255,255,255,0.07);background:linear-gradient(135deg,rgba(194,24,91,0.18) 0%,rgba(17,17,17,0) 80%)">
+        <span style="display:inline-flex;width:38px;height:38px;align-items:center;justify-content:center;background:#C2185B;border-radius:50%;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:#fff;flex-shrink:0">S</span>
+        <div style="flex:1;min-width:0">
+          <p style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:#fff;margin:0;line-height:1.1">Asistente Saxy</p>
+          <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;color:#E91E8C;margin:2px 0 0;display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:#4ade80;display:inline-block"></span>En línea · responde la propuesta</p>
+        </div>
+        <button onClick="{{ closeChat }}" style="background:none;border:none;color:#888;font-size:22px;cursor:pointer;line-height:1;padding:4px" style-hover="color:#fff">×</button>
+      </div>
+      <!-- messages -->
+      <div ref="{{ scrollRef }}" style="flex:1;overflow-y:auto;padding:20px;display:flex;flex-direction:column;gap:14px">
+        <sc-for list="{{ messages }}" as="m" hint-placeholder-count="2">
+          <sc-if value="{{ m.notMine }}">
+            <div style="align-self:flex-start;max-width:84%;background:#1A1A1A;border:1px solid rgba(255,255,255,0.06);border-radius:4px 12px 12px 12px;padding:12px 15px">
+              <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.6;color:#E8E8E8;margin:0;white-space:pre-wrap">{{ m.text }}</p>
+            </div>
+          </sc-if>
+          <sc-if value="{{ m.mine }}">
+            <div style="align-self:flex-end;max-width:84%;background:#C2185B;border-radius:12px 4px 12px 12px;padding:12px 15px">
+              <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.6;color:#fff;margin:0;white-space:pre-wrap">{{ m.text }}</p>
+            </div>
+          </sc-if>
+        </sc-for>
+        <sc-if value="{{ isLoading }}">
+          <div style="align-self:flex-start;background:#1A1A1A;border:1px solid rgba(255,255,255,0.06);border-radius:4px 12px 12px 12px;padding:14px 16px;display:flex;gap:5px">
+            <span style="width:7px;height:7px;border-radius:50%;background:#C2185B;display:inline-block;animation:saxyDot 1.2s ease-in-out infinite"></span>
+            <span style="width:7px;height:7px;border-radius:50%;background:#C2185B;display:inline-block;animation:saxyDot 1.2s ease-in-out .2s infinite"></span>
+            <span style="width:7px;height:7px;border-radius:50%;background:#C2185B;display:inline-block;animation:saxyDot 1.2s ease-in-out .4s infinite"></span>
+          </div>
+        </sc-if>
+      </div>
+      <!-- suggestions -->
+      <sc-if value="{{ showSuggestions }}">
+        <div style="display:flex;gap:8px;flex-wrap:wrap;padding:0 20px 12px;border-top:1px solid rgba(255,255,255,0.04)">
+          <button onClick="{{ askHorario }}" style="background:rgba(194,24,91,0.1);border:1px solid rgba(194,24,91,0.3);border-radius:20px;padding:7px 14px;font-family:'Inter',sans-serif;font-size:12px;color:#E8E8E8;cursor:pointer" style-hover="background:rgba(194,24,91,0.2)">¿Qué incluye la Opción 2?</button>
+          <button onClick="{{ askTiempo }}" style="background:rgba(194,24,91,0.1);border:1px solid rgba(194,24,91,0.3);border-radius:20px;padding:7px 14px;font-family:'Inter',sans-serif;font-size:12px;color:#E8E8E8;cursor:pointer" style-hover="background:rgba(194,24,91,0.2)">¿Cuánto tarda el lanzamiento?</button>
+          <button onClick="{{ askRiservi }}" style="background:rgba(194,24,91,0.1);border:1px solid rgba(194,24,91,0.3);border-radius:20px;padding:7px 14px;font-family:'Inter',sans-serif;font-size:12px;color:#E8E8E8;cursor:pointer" style-hover="background:rgba(194,24,91,0.2)">¿Cómo conecta con Riservi?</button>
+        </div>
+      </sc-if>
+      <!-- input bloqueado (demo) -->
+      <div style="display:flex;align-items:center;padding:14px 16px;border-top:1px solid rgba(255,255,255,0.07);background:#0d0d0d">
+        <div style="flex:1;display:flex;align-items:center;gap:9px;background:#161616;border:1px dashed rgba(194,24,91,0.45);border-radius:4px;padding:11px 14px;color:#9a9a9a;font-family:'Inter',sans-serif;font-size:12.5px;line-height:1.45">
+          <span style="flex-shrink:0;font-size:14px">🔒</span>
+          <span>Esto es una demostración. El asistente completo se activa cuando contratas el proyecto con <span style="color:#E91E8C;font-weight:600">BubbleMesh</span>. Usa las preguntas de arriba.</span>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    open: false,
+    input: "",
+    loading: false,
+    messages: [
+      { text: "Hola 👋 Soy el asistente de esta propuesta para Saxy Jazz Club. Pregúntame sobre los paquetes, los flujos, los tiempos o cualquier detalle del proyecto.", mine: false }
+    ]
+  };
+
+  context = `Eres el asistente comercial de la propuesta de BubbleMesh Xperience para Saxy Jazz Club. Respondes preguntas sobre esta propuesta de forma breve, cálida y profesional, en español. No inventes datos fuera de los siguientes hechos.
+
+PRODUCTO: Asistente de atención automatizada (un chatbot), conectado a Instagram DM y WhatsApp Business. No menciones nunca el nombre del proveedor de la plataforma del chatbot. Plataforma de reservas: Riservi. Canales: Instagram + WhatsApp.
+
+PROBLEMA QUE RESUELVE: El equipo de marketing de Saxy responde lento los DMs. Cada mensaje sin respuesta rápida es una mesa perdida. El asistente responde al instante las preguntas frecuentes, filtra lo importante y escala al equipo solo lo que necesita un humano, con el contexto capturado (fecha, personas, intención).
+
+LOS 4 FLUJOS:
+1. Bienvenida y FAQ: horario (Martes a Sábado desde 8pm), cover (Jueves $200, Viernes y Sábado $300 por persona), ubicación (Plaza O2, Sótano 1, San Pedro Garza García), link a Riservi.
+2. Intención de reserva: pregunta fecha, personas y horario; envía link de Riservi contextualizado; seguimiento automático a las 24h si no completa.
+3. Eventos y cartelera: info del artista de la semana, precio de boletos, redirección a Riservi o escalada para grupos grandes.
+4. Escalada al equipo: detecta casos fuera de alcance, notifica al equipo con el historial, el cliente recibe "un miembro de nuestro equipo te responde en breve".
+
+RISERVI: gestiona disponibilidad, confirma y recuerda reservas, administra eventos. El asistente NO accede a disponibilidad en tiempo real; lleva al cliente hasta el widget de Riservi. La conexión en tiempo real es Fase 2 (futura).
+
+FUERA DE ALCANCE (por ahora): conexión en tiempo real con Riservi (Fase 2), gestión de comunidad/comentarios (paquete CM aparte), creación de contenido, cobro de boletos dentro del chat.
+
+PRECIOS (MXN):
+- Opción 1 SIN CONTRATO: Implementación $15,000 + Mensual $3,000. Sin plazo forzoso. Incluye: config del chatbot IG+WhatsApp, 4 flujos, entrenamiento con info real de Saxy, pruebas, 1 mes de soporte.
+- Opción 2 CONTRATO 6 MESES (RECOMENDADA): Implementación $0 + Mensual $3,000. Compromiso mínimo 6 meses. Todo lo anterior + actualización mensual de flujos, reporte mensual (mensajes atendidos, tasa de escalada, conversiones), ajustes de flujo sin costo.
+- Opción 3 CONTRATO 12 MESES: Implementación $0 + Mensual $2,500. Todo lo de la 2 + evaluación semestral, prioridad en Fase 2, descuento si se amplía alcance.
+- La licencia de la plataforma del chatbot la paga Saxy (~$15 USD/mes).
+- Existe un paquete adicional con Community Manager dedicado (inversión mayor, se cotiza en reunión).
+
+TIEMPOS: Del primer pago al asistente en vivo: 2 a 3 semanas. Pasos: 1) Firma y primer pago (1-2 días). 2) Onboarding 60-90 min (semana 1). 3) Construcción (semana 1-2). 4) Revisión con el equipo (semana 2). 5) Lanzamiento (semana 2-3). 6) Primer mes de ajustes (mes 1).
+
+EQUIPO BUBBLEMESH: Elías Rico (Líder de Ventas y Operaciones), Emily Sisalima (SR & Account Manager, contacto principal), Aranza Contreras (Content & Community), Jesús Mostalac (Marketing y RP).
+
+Si te preguntan algo que no está aquí, di amablemente que ese detalle se resuelve en la reunión con el equipo y ofrece contactar a contacto@bubble-mesh.com. Mantén las respuestas en 2-4 frases, claras y directas.`;
+
+  componentDidMount() {
+    this._io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = "1";
+          e.target.style.transform = "translateY(0)";
+          this._io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    requestAnimationFrame(() => {
+      const root = document.querySelector('[data-reveal]') ? document : document;
+      document.querySelectorAll('[data-reveal]').forEach((el) => {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(24px)";
+        el.style.transition = "opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1)";
+        this._io.observe(el);
+      });
+    });
+  }
+
+  componentWillUnmount() { if (this._io) this._io.disconnect(); }
+
+  scrollToBottom() {
+    requestAnimationFrame(() => {
+      if (this._scroll) this._scroll.scrollTop = this._scroll.scrollHeight;
+    });
+  }
+
+  // Respuestas predefinidas (demo). El asistente real se entrena y activa al contratar con BubbleMesh.
+  cannedAnswer(question) {
+    const tail = "\n\n✨ Esto es una demostración. Al contratar, activamos tu asistente real con BubbleMesh, entrenado con la información de Saxy.";
+    const map = {
+      "¿Qué incluye la Opción 2?": "La Opción 2 (recomendada · contrato 6 meses) es Implementación $0 + $3,000 MXN al mes. Incluye la configuración del chatbot en Instagram y WhatsApp, los 4 flujos, entrenamiento con info real de Saxy, actualización mensual de flujos y un reporte mensual de resultados." + tail,
+      "¿Cuánto tarda el lanzamiento?": "Del primer pago al asistente en vivo: de 2 a 3 semanas. Pasos: firma y primer pago, onboarding de 60-90 min, construcción de los flujos, revisión con tu equipo y lanzamiento, más el primer mes de ajustes." + tail,
+      "¿Cómo conecta el asistente con Riservi?": "El asistente lleva al cliente directo al widget de reservas de Riservi con la fecha y el número de personas ya capturados. La conexión en tiempo real con disponibilidad es Fase 2 (futura)." + tail
+    };
+    return map[question] || ("Ese detalle lo resolvemos en la reunión con el equipo. Escríbenos a contacto@bubble-mesh.com." + tail);
+  }
+
+  ask(question) {
+    const q = (question || "").trim();
+    if (!q || this.state.loading) return;
+    const history = this.state.messages.concat([{ text: q, mine: true }]);
+    this.setState({ messages: history, input: "", loading: true });
+    this.scrollToBottom();
+    const reply = this.cannedAnswer(q);
+    setTimeout(() => {
+      this.setState((s) => ({ messages: s.messages.concat([{ text: reply, mine: false }]), loading: false }));
+      this.scrollToBottom();
+    }, 600);
+  }
+
+  renderVals() {
+    const messages = this.state.messages.map((m) => ({ text: m.text, mine: !!m.mine, notMine: !m.mine }));
+    return {
+      chatOpen: this.state.open,
+      chatClosed: !this.state.open,
+      messages,
+      isLoading: this.state.loading,
+      inputValue: this.state.input,
+      showSuggestions: !this.state.loading,
+      scrollRef: (el) => { this._scroll = el; },
+      openChat: () => { this.setState({ open: true }); this.scrollToBottom(); },
+      closeChat: () => this.setState({ open: false }),
+      onInput: (e) => this.setState({ input: e.target.value }),
+      onKey: (e) => { if (e.key === "Enter") { e.preventDefault(); this.ask(this.state.input); } },
+      send: () => this.ask(this.state.input),
+      askHorario: () => this.ask("¿Qué incluye la Opción 2?"),
+      askTiempo: () => this.ask("¿Cuánto tarda el lanzamiento?"),
+      askRiservi: () => this.ask("¿Cómo conecta el asistente con Riservi?")
+    };
+  }
+}
+</script>
+</body>
+</html>
